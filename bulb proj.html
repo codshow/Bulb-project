@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://127.0.0.1:5500/bulb%20project%20Rishav.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+.project{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(bg.jpg);
+        }
+        #Bulb-off img, #Bulb-on img{
+            height: 100%;
+            width: 100%;
+        }
+        #Bulb-off{
+            position: relative;
+        }
+        #Bulb-on{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #Bulb-off:hover #Bulb-on{
+            display: block;
+        }
+        .container{
+            width: 50%;
+            height: 50%;
+            margin-top: 5%;
+            margin-left: 25%;
+            border: 10px solid black;
+            background-color: black;
+            border-radius: 10px;
+        }
+        .container:hover{
+            border: 10px solid rgb(45, 45, 39);
+        }
+        #heading{
+            text-align: center;
+            margin: 20px;
+            color: rgb(43, 43, 17);
+        }
+        #footer{
+            text-align: center;
+            color: orange;
+            margin: 20px;
+        }
+</style></head>
+
+<body>
+    <h1 id="heading">HTML &amp; CSS Bulb</h1>
+    <div class="container"><div id="Bulb-off">
+            <img src="Bulb Off.jpg" alt="">
+            <div id="Bulb-on">
+                <img src="Bubl On.jpg" alt="">
+            </div>
+    </div>
+    </div>
+    <h1 id="footer">Hover over the bulb to turn on</h1>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
